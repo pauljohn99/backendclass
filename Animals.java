@@ -12,6 +12,7 @@ public class Animals {
 	static HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
 	char p;
 	String height, color, breed;
+
 	public static void main(String[] args) {
 		do {
 			Scanner read = new Scanner(System.in);
@@ -52,7 +53,7 @@ public class Animals {
 				break;
 
 			case 3:
-				System.out.println("enter animal(dog/cow)");
+				System.out.println("enter animal(dog/cow):");
 				String t = read.next();
 				switch (t) {
 				case "dog":
@@ -66,7 +67,7 @@ public class Animals {
 				}
 				break;
 			case 4:
-				System.out.println("enter animal(dog/cow)");
+				System.out.println("enter animal(dog/cow):");
 				String y = read.next();
 				switch (y) {
 				case "dog":
