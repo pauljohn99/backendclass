@@ -11,7 +11,7 @@ public class Animals {
 	static String name;
 	static HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
 	char p;
-
+	String height, color, breed;
 	public static void main(String[] args) {
 		do {
 			Scanner read = new Scanner(System.in);
@@ -87,7 +87,7 @@ public class Animals {
 			ani.p = read.next().charAt(0);
 		}
 
-		while (ani.p == 'Y');
+		while (ani.p == 'y');
 	}
 
 }

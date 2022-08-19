@@ -30,8 +30,12 @@ public class stack {
 			case 2:
 				System.out.println("enter element");
 				int j = read.nextInt();
-				top1++;
+				if(top1<100) {
+					top1++;
 				stack1[top1] = j;
+				}
+				else
+					System.out.println("stack full");
 			}
 			System.out.println("to stop press S");
 			p = read.next().charAt(0);
