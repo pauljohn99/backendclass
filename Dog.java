@@ -51,17 +51,17 @@ public class Dog extends Animals {
 			case 1:
 				System.out.println("new height");
 				ani.height = read.next();
-				details.get(ani.breed).add(0, ani.height);
+				details.get(ani.breed).set(0, ani.height);
 				break;
 			case 2:
 				System.out.println("new color");
 				ani.color = read.next();
-				details.get(ani.breed).add(1, ani.color);
+				details.get(ani.breed).set(1, ani.color);
 				break;
 			case 3:
 				System.out.println("new use");
 				dogs.use = read.next();
-				details.get(ani.breed).add(2, dogs.use);
+				details.get(ani.breed).set(2, dogs.use);
 				break;
 			default:
 				System.out.println("invalid choice");
