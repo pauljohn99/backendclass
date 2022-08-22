@@ -8,7 +8,6 @@ public class Animals {
 	static Animals ani = new Animals();
 	static Dog dogs = new Dog();
 	static Cows cow = new Cows();
-	static String name;
 	static HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
 	char p;
 	String height, color, breed;
@@ -80,10 +79,11 @@ public class Animals {
 					System.out.println("invalid option");
 				}
 				break;
-
+			default:
+				System.out.println("invalid option");
 			}
 
-			System.out.println("do you want to continue");
+			System.out.println("do you want to continue(y)");
 
 			ani.p = read.next().charAt(0);
 		}

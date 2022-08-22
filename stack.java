@@ -23,9 +23,12 @@ public class stack {
 						top1--;
 					} while (top1 != -1);
 					System.out.println(stack2[top2]);
-				} else
+					top2--;
+				} 
+				else {
 					System.out.println(stack2[top2]);
 					top2--;
+				}
 				break;
 			case 2:
 				System.out.println("enter element");
@@ -39,7 +42,7 @@ public class stack {
 			}
 			System.out.println("to stop press S");
 			p = read.next().charAt(0);
-		} while (p != 'S');
+		} while (p != 's');
 
 	}
 }

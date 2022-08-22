@@ -26,7 +26,7 @@ public class Dog extends Animals {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of dog");
 		ani.breed = read.next();
-		if (details.containsKey(dogs.breed)) {
+		if (details.containsKey(ani.breed)) {
 			System.out.println("height of dog");
 			System.out.println(details.get(ani.breed).get(0));
 			System.out.println("color of dog");
