@@ -10,16 +10,20 @@ public class Cows extends Animals {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of cows");
 		ani.breed = read.next();
-		details.put(ani.breed, new ArrayList<String>());
-		System.out.println("height of breed of cows");
-		ani.height = read.next();
-		details.get(ani.breed).add(ani.height);
-		System.out.println("color of breed of cow");
-		ani.color = read.next();
-		details.get(ani.breed).add(ani.color);
-		System.out.println("amount of milk given by cow");
-		cow.milkquantity = read.next();
-		details.get(ani.breed).add(cow.milkquantity);
+		if (details.containsKey(ani.breed)) {
+			System.out.println("already exist");
+		} else {
+			details.put(ani.breed, new ArrayList<String>());
+			System.out.println("height of breed of cows");
+			ani.height = read.next();
+			details.get(ani.breed).add(ani.height);
+			System.out.println("color of breed of cow");
+			ani.color = read.next();
+			details.get(ani.breed).add(ani.color);
+			System.out.println("amount of milk given by cow");
+			cow.milkquantity = read.next();
+			details.get(ani.breed).add(cow.milkquantity);
+		}
 	}
 
 	public void read() {

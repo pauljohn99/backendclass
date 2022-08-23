@@ -10,7 +10,10 @@ public class Dog extends Animals {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of dog");
 		ani.breed = read.next();
-		details.put(ani.breed, new ArrayList<String>());
+		if (details.containsKey(ani.breed)) {
+			System.out.println("already exist");
+		} else {
+			details.put(ani.breed, new ArrayList<String>());
 		System.out.println("height of dog");
 		ani.height = read.next();
 		details.get(ani.breed).add(ani.height);
@@ -20,6 +23,7 @@ public class Dog extends Animals {
 		System.out.println("use of dog");
 		dogs.use = read.next();
 		details.get(ani.breed).add(dogs.use);
+		}
 	}
 
 	public void read() {
