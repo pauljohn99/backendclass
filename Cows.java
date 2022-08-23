@@ -9,34 +9,34 @@ public class Cows extends Animals {
 	public void enter() {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of cows");
-		ani.breed = read.next();
-		if (details.containsKey(ani.breed)) {
+		breed = read.next();
+		if (details.containsKey(breed)) {
 			System.out.println("already exist");
 		} else {
-			details.put(ani.breed, new ArrayList<String>());
+			details.put(breed, new ArrayList<String>());
 			System.out.println("height of breed of cows");
-			ani.height = read.next();
-			details.get(ani.breed).add(ani.height);
+			height = read.next();
+			details.get(breed).add(height);
 			System.out.println("color of breed of cow");
-			ani.color = read.next();
-			details.get(ani.breed).add(ani.color);
+			color = read.next();
+			details.get(breed).add(color);
 			System.out.println("amount of milk given by cow");
-			cow.milkquantity = read.next();
-			details.get(ani.breed).add(cow.milkquantity);
+			milkquantity = read.next();
+			details.get(breed).add(milkquantity);
 		}
 	}
 
 	public void read() {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of cows");
-		ani.breed = read.next();
-		if (details.containsKey(ani.breed)) {
+		breed = read.next();
+		if (details.containsKey(breed)) {
 			System.out.println("height of breed of cows");
-			System.out.println(details.get(ani.breed).get(0));
+			System.out.println(details.get(breed).get(0));
 			System.out.println("color of breed of cow");
-			System.out.println(details.get(ani.breed).get(1));
+			System.out.println(details.get(breed).get(1));
 			System.out.println("quantity of milk given by cow");
-			System.out.println(details.get(ani.breed).get(2));
+			System.out.println(details.get(breed).get(2));
 		} else
 			System.out.println("breed doesnt exist");
 	}
@@ -44,26 +44,27 @@ public class Cows extends Animals {
 	public void edit() {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of cow");
-		ani.breed = read.next();
-		if (details.containsKey(ani.breed)) {
+		breed = read.next();
+		if (details.containsKey(breed)) {
 			System.out.println("1 to edit height");
 			System.out.println("2 to edit color");
+			System.out.println("3 to edit milk quantity");
 			int p = read.nextInt();
 			switch (p) {
 			case 1:
 				System.out.println("new height");
-				cow.height = read.next();
-				details.get(ani.breed).set(0, ani.height);
+				height = read.next();
+				details.get(breed).set(0, height);
 				break;
 			case 2:
 				System.out.println("new color");
-				ani.color = read.next();
-				details.get(ani.breed).set(1, ani.color);
+				color = read.next();
+				details.get(breed).set(1, color);
 				break;
 			case 3:
 				System.out.println("milk quantity");
-				cow.milkquantity = read.next();
-				details.get(ani.breed).set(2, cow.milkquantity);
+				milkquantity = read.next();
+				details.get(breed).set(2, milkquantity);
 				break;
 			default:
 				System.out.println("invalid choice");
@@ -76,9 +77,9 @@ public class Cows extends Animals {
 	public void remove() {
 		Scanner read = new Scanner(System.in);
 		System.out.println("breed of cow");
-		ani.breed = read.next();
-		if (details.containsKey(ani.breed))
-			details.remove(ani.breed);
+		breed = read.next();
+		if (details.containsKey(breed))
+			details.remove(breed);
 		else
 			System.out.println("breed doesnt exist");
 	}

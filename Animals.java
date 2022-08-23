@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Animals {
-	static Animals ani = new Animals();
+   static Animals ani = new Animals();
 	static Dog dogs = new Dog();
 	static Cows cow = new Cows();
-	static HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
-	char p;
+	HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
 	String height, color, breed;
 
 	public static void main(String[] args) {
+		char p;
 		do {
 			Scanner read = new Scanner(System.in);
 			System.out.println("1 to enter information");
@@ -85,10 +85,10 @@ public class Animals {
 
 			System.out.println("do you want to continue(y)");
 
-			ani.p = read.next().charAt(0);
+			p = read.next().charAt(0);
 		}
 
-		while (ani.p == 'y');
+		while (p == 'y');
 	}
 
 }
