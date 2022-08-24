@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Animals {
-   static Animals ani = new Animals();
+	static Animals ani = new Animals();
 	static Dog dogs = new Dog();
 	static Cows cow = new Cows();
-	HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
-	String height, color, breed;
+	static String name, breed, height, color;;
+	static HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
+	char p1;
 
 	public static void main(String[] args) {
-		char p;
 		do {
 			Scanner read = new Scanner(System.in);
 			System.out.println("1 to enter information");
@@ -23,72 +23,82 @@ public class Animals {
 			int i = read.nextInt();
 			switch (i) {
 			case 1:
-				System.out.println("enter animal(dog/cow)");
-				String s = read.next();
-				switch (s) {
-				case "dog":
-					dogs.enter();
-					break;
-				case "cow":
-					cow.enter();
-					break;
-				default:
-					System.out.println("invalid option");
-				}
+				enter();
 				break;
 			case 2:
-				System.out.println("enter animal(dog/cow)");
-				String r = read.next();
-				switch (r) {
-				case "dog":
-					dogs.read();
-					break;
-				case "cow":
-					cow.read();
-					break;
-				default:
-					System.out.println("invalid option");
-				}
+				read();
 				break;
-
 			case 3:
-				System.out.println("enter animal(dog/cow):");
-				String t = read.next();
-				switch (t) {
-				case "dog":
-					dogs.edit();
-					break;
-				case "cow":
-					cow.edit();
-					break;
-				default:
-					System.out.println("invalid option");
-				}
+				edit();
 				break;
 			case 4:
-				System.out.println("enter animal(dog/cow):");
-				String y = read.next();
-				switch (y) {
-				case "dog":
-					dogs.remove();
-					break;
-				case "cow":
-					cow.remove();
-					break;
-				default:
-					System.out.println("invalid option");
-				}
+				remove();
 				break;
 			default:
-				System.out.println("invalid option");
+				System.out.println("wrong choice");
+
 			}
-
+			Scanner read1 = new Scanner(System.in);
 			System.out.println("do you want to continue(y)");
+			ani.p1 = read1.next().charAt(0);
+		} while (ani.p1 == 'y');
+	}
 
-			p = read.next().charAt(0);
+	public static void edit() {
+		Scanner read = new Scanner(System.in);
+			System.out.println("enter breed");
+			breed = read.next();
+			System.out.println("1 to edit height");
+			System.out.println("2 to edit color");
+			int k = read.nextInt();
+			switch (k) {
+			case 1:
+				System.out.println("new height");
+				height = read.next();
+				details.get(breed).add(0, height);
+				break;
+			case 2:
+				System.out.println("new color");
+				color = read.next();
+				details.get(breed).add(1, color);
+				break;
+			default:
+				System.out.println("wrong choice");
+
+			}
 		}
+	
 
-		while (p == 'y');
+	public static void read() {
+		Scanner read = new Scanner(System.in);
+		System.out.println("breed of dog");
+		dogs.breed = read.next();
+		System.out.println("height of breed of dog");
+		details.get(dogs.breed).get(0);
+		System.out.println("color of breed of dog");
+		details.get(dogs.breed).get(1);
+
+	}
+
+	public static void enter() {
+		Scanner read = new Scanner(System.in);
+		System.out.println("enter breed");
+		breed = read.next();
+		details.put(breed, new ArrayList<String>());
+		System.out.println("height of breed");
+		height = read.next();
+		details.get(breed).add(height);
+		System.out.println("color of breed of cow");
+		color = read.next();
+		details.get(breed).add(color);
+	}
+
+	public static void remove() {
+		Scanner read = new Scanner(System.in);
+		System.out.println("enter breed");
+		breed = read.next();
+		details.remove(breed);
+
 	}
 
 }
